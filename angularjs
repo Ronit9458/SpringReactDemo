@@ -1,0 +1,118 @@
+Angular JS is an open source JavaScript framework that is used to build web applications. It can be freely used, changed and shared by anyone.
+
+
+Angular 7 is a JavaScript (actually a TypeScript based open-source full-stack web application) framework which makes you able to create reactive 
+Single Page Applications (SPAs). Angular 7 is completely based on components.
+
+AngularJS expressions can be written inside double braces: {{ expression }}.
+AngularJS expressions can also be written inside a directive: ng-bind="expression".
+ 
+<div ng-app="myApp" ng-controller="personCtrl"> 
+
+
+var app = angular.module('myApp', []);     //
+app.controller('personCtrl', function($scope)
+
+
+
+
+);
+
+input
+p><input type="text" ng-model="test"></p>  
+
+
+
+<div ng-app="myApp" w3-test-directive></div> 
+
+<script>  
+var app = angular.module("myApp", []);  
+app.directive("w3TestDirective", function() {  
+    return {  
+        template : "This is a directive constructor. "  
+    };  
+});  
+*********************************
+filter 
+
+lowercase change
+<p>The name is {{ firstName | lowercase }}</p>  
+uppercase change 
+ {{ firstName | uppercase }}
+
+<li ng-repeat="x in names | filter:test">  
+    {{ x }}  
+  </li>  
+
+<li ng-repeat="x in names | orderBy:'country'">  
+    {{ x.name + ', ' + x.country }}  
+  </li> 
+    <li ng-repeat="x in names | filter : 'o'">  
+    {{ x }}  
+  </li> 
+##########################################  
+  <body>  
+<p>Click the table headers to change the sorting order:</p>  
+<div ng-app="myApp" ng-controller="namesCtrl">  
+<table border="1" width="100%">  
+<tr>  
+<th ng-click="orderByMe('name')">Name</th>  
+<th ng-click="orderByMe('country')">Country</th>  
+</tr>  
+<tr ng-repeat="x in names | orderBy:myOrderBy">          // for loop method
+<td>{{x.name}}</td>  
+<td>{{x.country}}</td>  
+</tr>  
+</table>  
+</div>  
+<script>  
+angular.module('myApp', []).controller('namesCtrl', function($scope) {  
+       $scope.names = [  
+        {name:'Ramesh',country:'India'},  
+        {name:'Alex',country:'USA'},  
+        {name:'Pooja',country:'India'},  
+        {name:'Mahesh',country:'India'},  
+        {name:'Iqbal',country:'Pakistan'},  
+        {name:'Ramanujam',country:'India'},  
+        {name:'Osama',country:'Iraq'},  
+        {name:'Johnson',country:'UK'},  
+        {name:'Karl',country:'Russia'}  
+        ];  
+  
+    $scope.orderByMe = function(x) {  
+        $scope.myOrderBy = x;  
+    }  
+});  
+</script>  
+</body> 
+############################################
+
+for select 
+
+<option ng-repeat="x in names">{{x}}</option>  or   <select ng-model="selectedName" ng-options="x for x in names"></select> 
+
+<select ng-model="selectedCar" ng-options="x for (x, y) in cars"></select>
+
+data source, x represents the key, and y represents the value 
+car01 : {brand : "Ford", model : "Mustang", color : "red"},
+selectedCar={brand : "Ford", model : "Mustang", color : "red"}.
+
+
+
+7777777&&&&&&&&&&&&&&&&&&&&&&&&&&
+ng-click directive
+<td><p>Total click: {{ clickCounter }}</p></td>  
+<td><button ng-click = "clickCounter = clickCounter + 1">Click Me!</button></td> 
+
+
+switch case
+
+<div ng-switch="myVar">  
+  <div ng-switch-when="tuts">  
+  <div ng-switch="myVar">  
+  <div ng-switch-when="tuts">  
+     <h1>Tutorials</h1>  
+     <p>Welcome to the best tutorials over the net</p>  
+  </div>  
+
+

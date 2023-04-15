@@ -1,0 +1,24 @@
+----------------------------------Oracle----------------------------------------------------
+to connect with sys -------------sqlplus / AS SYSDBA
+start sqlplus sys/sys as sysdba
+sqlplus sys/oracle as sysdba
+
+
+reset for expire password
+
+1-Connect to the database using sys users
+2-select * from dba_profiles;
+3- Execute the following command to disable this feature or changing PASSWORD_LIFE_TIME for 'Default' profile:
+Sql> ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;
+4- Now cross check for disabling of this feature using following command:
+Sql > select * from dba_profiles;
+
+5-Now reset the password of the locked user using the following command. [user_name] and [password] are the placeholder for
+Oracle user name and new password respectively.
+sql> alter user [user_name] identified by [password];
+
+6-Unlock user account using following command
+sql> alter user [User_name] account unlock;
+7. Cross check by the value of accout_status field in dba_users view.
+sql> select username,account_status from dba_users;
+The value of account_status filed should by "OPEN" for the corresponding user.

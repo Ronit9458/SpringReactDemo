@@ -1,5 +1,16 @@
 package com.master.contact.api.services;
 
-public class UserService {
+import java.util.List;
+
+import com.master.contact.api.model.UserModel;
+
+public interface UserService {
+	
+	UserModel createUser(UserModel userModel);
+	UserModel updateUser(UserModel userModel,Integer userId);
+	List<UserModel> getAllList(UserModel userModel);
+	UserModel getListById(Integer userId);
+	public void deleteById(Integer userId);
+	
 
 }

@@ -3,6 +3,7 @@ package com.master.contact.api.serviceImpl;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,9 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserDao userDao;
+	
+	@Autowired
+	private ModelMapper modelMaper;
 	
 	// Method to create records
 	@Override
@@ -78,7 +82,8 @@ public class UserServiceImpl implements UserService {
 	// this method is used to convert model to entity
 	public User modelToEntity(UserModel userModel)
 	{
-		User userEntity=new User();
+		User userEntity=this.modelMaper.map(userModel, User.class);
+		//User userEntity=new User();
 		//userEntity.setId(userModel.getId());
 		
 		return userEntity;
@@ -89,7 +94,8 @@ public class UserServiceImpl implements UserService {
 	// this method is used to convert entity to model
 	public UserModel entityToModel(User user)
 	{
-		UserModel userModel=new UserModel();
+		UserModel userModel=this.modelMaper.map(user, UserModel.class);
+		//UserModel userModel=new UserModel();
 	//	userModel.setId(user.getId());
 		
 		return userModel;

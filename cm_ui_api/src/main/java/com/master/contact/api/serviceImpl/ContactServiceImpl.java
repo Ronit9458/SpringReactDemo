@@ -32,8 +32,8 @@ public class ContactServiceImpl implements ContactService {
 		//here we are going to set data from model to entity
 		
 		Contact save = this.contactDao.save(contactEntity);
-		
-		return entityToModel(save);
+		ContactModel model = this.entityToModel(save);
+		return model;
 	}
 
 	@Override

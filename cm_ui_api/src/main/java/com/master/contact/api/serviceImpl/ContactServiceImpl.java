@@ -3,6 +3,7 @@ package com.master.contact.api.serviceImpl;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,9 @@ public class ContactServiceImpl implements ContactService {
 
 	@Autowired
 	private ContactDao contactDao;
+	
+	@Autowired
+	private ModelMapper modelMaper;
 	
 	@Override
 	public ContactModel createUser(ContactModel contactModel) {
@@ -61,7 +65,8 @@ public class ContactServiceImpl implements ContactService {
 	
 	public Contact modelToEntity(ContactModel contactModel)
 	{
-		Contact contactEntity=new Contact();
+		Contact contactEntity=this.modelMaper.map(contactModel, Contact.class);
+		//Contact contactEntity=new Contact();
 		//contactEntity.setId(contactModel.getId());
 		return contactEntity;
 		
@@ -69,7 +74,9 @@ public class ContactServiceImpl implements ContactService {
 	
 	public ContactModel entityToModel(Contact contact)
 	{
-		ContactModel contactModel=new ContactModel();
+		
+		ContactModel contactModel=this.modelMaper.map(contact, ContactModel.class);
+	//	ContactModel contactModel=new ContactModel();
 //		contactModel.setId(contact.getId());
 		
 		

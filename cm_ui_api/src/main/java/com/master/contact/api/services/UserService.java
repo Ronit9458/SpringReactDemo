@@ -8,7 +8,7 @@ public interface UserService {
 	
 	UserModel createUser(UserModel userModel);
 	UserModel updateUser(UserModel userModel,Integer userId);
-	List<UserModel> getAllList(UserModel userModel);
+	List<UserModel> getAllList();
 	UserModel getListById(Integer userId);
 	public void deleteById(Integer userId);
 	

@@ -47,7 +47,7 @@ public class UserServiceImpl implements UserService {
 	
 //this method is used to get all the list
 	@Override
-	public List<UserModel> getAllList(UserModel userModel) {
+	public List<UserModel> getAllList() {
 		List<User> allList = this.userDao.findAll();
 		List<UserModel> model = allList.stream().map(users-> this.entityToModel(users)).collect(Collectors.toList());
 		return model;

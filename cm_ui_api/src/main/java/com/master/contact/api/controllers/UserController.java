@@ -36,8 +36,8 @@ public class UserController {
 		
 	}
 	
-	@GetMapping("/list/{id}")
-	public ResponseEntity<UserModel> getSingleUser(@PathVariable Integer id)
+	@GetMapping("/listById")
+	public ResponseEntity<UserModel> getSingleUser(@RequestParam(required = false) Integer id)
 	{
 		
 		return ResponseEntity.ok(this.userService.getListById(id));

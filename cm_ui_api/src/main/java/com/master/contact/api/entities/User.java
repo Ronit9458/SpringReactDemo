@@ -1,9 +1,9 @@
 package com.master.contact.api.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
-
-
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -68,8 +68,8 @@ public class User {
 	@Column(name = "UPD_TS")
 	private	Date updTs = new Date();
 	
-	@OneToMany(cascade=CascadeType.ALL ,fetch=FetchType.LAZY,mappedBy = "userId")
-	private Set<Contact> contact;
+	@OneToMany(cascade=CascadeType.ALL ,mappedBy = "userId")
+	private Set<Contact> contact ;
 	
 	
 	@Column(name = "NAME")

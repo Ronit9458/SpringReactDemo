@@ -2,6 +2,10 @@ package com.master.contact.api.model;
 
 import java.util.Date;
 
+import com.master.contact.api.entities.User;
+
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,7 +17,7 @@ import lombok.Setter;
 public class ContactModel {
 	
 	private int id;
-	private int userId;
+	private UserModel userId;
 	private String name;
 	private String homeNo;
 	private String email;

@@ -31,7 +31,7 @@ public class Contact {
 	
 	
 	@ManyToOne
-	@JoinColumn(name = "USR_ID", nullable=false)
+	@JoinColumn(name = "USR_ID")
 	private User userId;
 	
 	@Column(name = "NAME")

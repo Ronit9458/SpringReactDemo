@@ -1,0 +1,71 @@
+
+.container {
+    font-family: arial;
+    font-size: 24px;
+    height: 100vh;
+    background-color: rgb(53, 52, 121); /* For browsers that do not support gradients */
+    background-image: linear-gradient(rgba(6, 5, 83,1),rgba(89, 89, 110,1), rgba(24, 3, 49,1));
+    position: relative;
+ 
+  }
+  
+  .child {
+    width: 40vw;
+    height: 80vh;
+    background-color: rgba(256, 256, 256, 0.7);
+    border-radius: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid white;
+    box-shadow: 3px 3px 5px white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+  } 
+  .logo-container {
+    height: 10vh;
+  }
+
+  .input-container{
+    height : 4rem;
+    background-color: rgba(256, 256, 256, 0.8);
+    margin: 1rem;
+    width: 70%;
+    display: flex;
+    align-items: center;
+
+  }
+  .input-style{
+    height: 30px;
+    border: none;
+     width:80%; 
+     padding: 10px;
+     margin: 10px;
+  }
+.img {
+    height :80%;
+    background-color: white;
+    margin: 2px;
+}
+
+
+  .button-container{
+    height : 4rem;
+    width: 70%;
+    background-color: rgba(6, 5, 83,1);
+    margin: 1rem; 
+    display: flex;
+    align-items: center;
+ 
+  }
+  .button{
+    border: none;
+    width: 100%;
+    background-color: rgba(6, 5, 83,1);
+    color: white;
+    font-size:large;
+
+  }

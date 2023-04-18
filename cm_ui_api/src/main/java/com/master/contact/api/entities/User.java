@@ -72,6 +72,10 @@ public class User {
 	private Set<Contact> contact;
 	
 	
+	@Column(name = "NAME")
+	private String name;
+	
+	
 	
 
 }

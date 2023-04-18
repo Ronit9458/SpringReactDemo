@@ -23,6 +23,7 @@ public class UserModel {
 	private Date crtTs;
 	private String updBy;
 	private Date updTc;
+	private String name;
 	
 	
 

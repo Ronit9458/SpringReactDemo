@@ -9,18 +9,18 @@ import lombok.Setter;
 @Setter
 public class UserModel {
 	
-	Long id;
-	String refId;
-	String pswd;
-	String email;
-	String userRole;
-	String cntctNumber;
-	String isActive;
-	String address;
-	String crtBy;
-	Date crtTs;
-	String updBy;
-	Date updTc;
+	private int id;
+	private String refId;
+	private String pswd;
+	private String email;
+	private String userRole;
+	private String cntctNumber;
+	private String isActive;
+	private String address;
+	private String crtBy;
+	private Date crtTs;
+	private String updBy;
+	private Date updTc;
 	
 	
 

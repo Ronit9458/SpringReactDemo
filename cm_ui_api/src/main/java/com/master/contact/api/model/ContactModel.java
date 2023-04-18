@@ -10,19 +10,19 @@ import lombok.Setter;
 @Getter
 public class ContactModel {
 	
-	Long id;
-	Long userId;
-	String name;
-	String homeNo;
-	String email;
-	String address;
-	String image;
-	String descr;
-	Date crtTs;
-	String crtBy;
-	Date updTs;
-	String updBy;
-	Date delTs;
-	String delBy;
+	private int id;
+	private int userId;
+	private String name;
+	private String homeNo;
+	private String email;
+	private String address;
+	private String image;
+	private String descr;
+	private Date crtTs;
+	private String crtBy;
+	private Date updTs;
+	private String updBy;
+	private	Date delTs;
+	private String delBy;
 
 }

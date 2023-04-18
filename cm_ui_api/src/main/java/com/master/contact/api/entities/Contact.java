@@ -13,10 +13,12 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "CONTACT")
+@NoArgsConstructor
 @Setter
 @Getter
 public class Contact {
@@ -25,53 +27,53 @@ public class Contact {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_CONTACT_GEN")
 	@SequenceGenerator(name = "SEQ_CONTACT_GEN", sequenceName = "SEQ_CONTACT", allocationSize = 1)
 	@Column(name = "ID")
-	Long id;
+	private int id;
 	
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "USR_ID")
-	Long userId;
+	@ManyToOne
+	@JoinColumn(name = "USR_ID", nullable=false)
+	private User userId;
 	
 	@Column(name = "NAME")
-	String name;
+	private String name;
 	
 	@Column(name = "PHONE_NO")
-	String phoneNo;
+	private String phoneNo;
 	
 	
 	@Column(name = "EMAIL")
-	String email;
+	private String email;
 	
 	@Column(name = "ADDRESS")
-	String address;
+	private	String address;
 	
 	@Column(name = "IMAGES")
-	String image;
+	private String image;
 	
 	
 	@Column(name = "DESCR")
-	String descr;
+	private	String descr;
 	
 	
 	@Column(name = "CRT_TS")
-	Date crtTc;
+	private Date crtTc;
 	
 	
 	@Column(name = "CRT_BY")
-	String crtTs;
+	private String crtTs;
 	
 	
 	@Column(name = "UPD_TS")
-	Date upsTc;
+	private Date upsTc;
 	
 	@Column(name = "UPD_BY")
-	String updBy;
+	private String updBy;
 	
 	@Column(name = "DEL_TS")
-	Date detTs;
+	private Date detTs;
 	
 	@Column(name = "DEL_BY")
-	String delBy;
+	private String delBy;
 	
 
 }

@@ -28,7 +28,9 @@ public class UserServiceImpl implements UserService {
 	public UserModel createUser(UserModel userModel) {
 		User userEntity=this.modelToEntity(userModel);
 		     User saveUser = userDao.save(userEntity);
+		     
 		     UserModel model=this.entityToModel(saveUser);
+		     
 		return model;
 	}
 	

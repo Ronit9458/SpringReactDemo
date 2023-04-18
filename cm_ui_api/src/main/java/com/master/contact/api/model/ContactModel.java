@@ -1,11 +1,10 @@
 package com.master.contact.api.model;
 
 import java.util.Date;
+import java.util.Set;
 
-import com.master.contact.api.entities.User;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,10 +13,11 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 public class ContactModel {
 	
 	private int id;
-	private UserModel userId;
+	private UserModel user;
 	private String name;
 	private String homeNo;
 	private String email;

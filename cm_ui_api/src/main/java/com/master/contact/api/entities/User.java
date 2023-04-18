@@ -1,10 +1,7 @@
 package com.master.contact.api.entities;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.Set;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,6 +22,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "USR")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 public class User {
@@ -68,7 +67,7 @@ public class User {
 	@Column(name = "UPD_TS")
 	private	Date updTs = new Date();
 	
-	@OneToMany(cascade=CascadeType.ALL ,mappedBy = "userId")
+	@OneToMany(cascade=CascadeType.ALL ,fetch=FetchType.LAZY,mappedBy = "user")
 	private Set<Contact> contact ;
 	
 	

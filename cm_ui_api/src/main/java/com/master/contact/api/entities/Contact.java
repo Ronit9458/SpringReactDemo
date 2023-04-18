@@ -5,6 +5,7 @@ import java.util.Set;
 
 import com.master.contact.api.model.ContactModel;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -19,14 +20,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "CONTACT")
-@NoArgsConstructor
 @AllArgsConstructor
 @Setter
 @Getter
-
+@ToString
 public class Contact {
 	
 	@Id
@@ -76,9 +77,21 @@ public class Contact {
 	@Column(name = "DEL_BY")
 	private String delBy;
 	
-	@ManyToOne
-	@JoinColumn(name="USR_ID",referencedColumnName = "id")
-	private User userId;
+	
+	
+//	@ManyToOne
+
+	 public Contact() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	 
+	 @ManyToOne
+	 @JoinColumn(name="USR_ID", nullable=false)
+	 private User user;
 	
 	
 

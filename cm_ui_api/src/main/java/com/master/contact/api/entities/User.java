@@ -21,15 +21,16 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 
 
 @Entity
 @Table(name = "USR")
-@NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString
 public class User {
 	
 	
@@ -75,8 +76,17 @@ public class User {
 	@Column(name = "NAME")
 	private String name;
 	
-	@OneToMany(cascade=CascadeType.ALL)
-	private List<Contact> contact = new ArrayList<>();
+	
+	
+   public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+   @OneToMany(cascade=CascadeType.ALL ,fetch=FetchType.LAZY,mappedBy = "user")
+	private Set<Contact> contact;
 	
 	
 	

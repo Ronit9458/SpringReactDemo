@@ -20,6 +20,8 @@ import com.master.contact.api.model.APIResponse;
 import com.master.contact.api.model.UserModel;
 import com.master.contact.api.services.UserService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -36,8 +38,8 @@ public class UserController {
 		
 	}
 	
-	@GetMapping("/list/{id}")
-	public ResponseEntity<UserModel> getSingleUser(@PathVariable Integer id)
+	@GetMapping("/listById")
+	public ResponseEntity<UserModel> getSingleUser(@RequestParam(required = false) Integer id)
 	{
 		
 		return ResponseEntity.ok(this.userService.getListById(id));
@@ -45,7 +47,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/create")
-	public ResponseEntity<UserModel> createUser(@RequestBody UserModel model)
+	public ResponseEntity<UserModel> createUser(@Valid @RequestBody UserModel model)
 	{
 		UserModel userModel = this.userService.createUser(model);
 		ResponseEntity<UserModel> response = new ResponseEntity<>(userModel,HttpStatus.CREATED);
@@ -54,7 +56,7 @@ public class UserController {
 	}
 	
 	@PutMapping("/update/{id}")
-	public ResponseEntity<UserModel> updateUser(@RequestBody UserModel model,@PathVariable Integer id)
+	public ResponseEntity<UserModel> updateUser(@Valid @RequestBody UserModel model,@PathVariable Integer id)
 	{
 		UserModel userModel = this.userService.updateUser(model, id);
 		

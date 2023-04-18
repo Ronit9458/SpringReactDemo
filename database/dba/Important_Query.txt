@@ -1,8 +1,6 @@
 ----------------------------------Oracle----------------------------------------------------
 to connect with sys -------------sqlplus / AS SYSDBA
 start sqlplus sys/sys as sysdba
-sqlplus sys/oracle as sysdba
-
 
 reset for expire password
 

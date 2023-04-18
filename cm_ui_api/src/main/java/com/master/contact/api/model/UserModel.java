@@ -24,7 +24,7 @@ public class UserModel {
 	private String crtBy;
 	private Date crtTs;
 	private String updBy;
-	private Date updTc;
+	private Date updTs;
 	private Set<ContactModel> contact;
 	
 	

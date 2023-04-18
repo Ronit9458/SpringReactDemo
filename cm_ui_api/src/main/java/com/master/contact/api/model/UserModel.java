@@ -1,7 +1,11 @@
 package com.master.contact.api.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
+
+import com.master.contact.api.entities.Contact;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,10 +28,10 @@ public class UserModel {
 	private String isActive;
 	private String address;
 	private String crtBy;
-	private Date crtTs;
+	private String crtTs;
 	private String updBy;
-	private Date updTs;
-	private Set<ContactModel> contact;
+	private String updTs;
+	private List<Contact> contact = new ArrayList<>();
 	
 	
 

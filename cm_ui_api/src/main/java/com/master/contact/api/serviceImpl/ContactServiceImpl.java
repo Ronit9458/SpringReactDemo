@@ -41,7 +41,7 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	@Override
-	public List<ContactModel> getAllList(ContactModel contactModel) {
+	public List<ContactModel> getAllList() {
 		List<Contact> allList = this.contactDao.findAll();
 		List<ContactModel> model = allList.stream().map(contacts-> this.entityToModel(contacts)).collect(Collectors.toList());
 		

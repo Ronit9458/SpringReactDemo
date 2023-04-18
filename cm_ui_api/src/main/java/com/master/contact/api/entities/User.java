@@ -1,7 +1,10 @@
 package com.master.contact.api.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,6 +12,8 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
@@ -59,20 +64,19 @@ public class User {
 	private String crtBy = "SYSTEM";
 	
 	@Column(name = "CRT_TS")
-	private Date crtTs = new Date();
+	private String crtTs ;
 	
 	@Column(name = "UPD_BY")
 	private	String updBy;
 	
 	@Column(name = "UPD_TS")
-	private	Date updTs = new Date();
-	
-	@OneToMany(cascade=CascadeType.ALL ,fetch=FetchType.LAZY,mappedBy = "user")
-	private Set<Contact> contact ;
-	
+	private	String updTs ;
 	
 	@Column(name = "NAME")
 	private String name;
+	
+	@OneToMany(cascade=CascadeType.ALL)
+	private List<Contact> contact = new ArrayList<>();
 	
 	
 	

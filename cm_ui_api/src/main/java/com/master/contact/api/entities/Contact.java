@@ -35,11 +35,6 @@ public class Contact {
 	@Column(name = "ID")
 	private int id;
 	
-	
-	@ManyToOne
-	@JoinColumn(name="USR_ID", nullable=false)
-	private User user;
-	
 	@Column(name = "NAME")
 	private String name;
 	
@@ -62,7 +57,7 @@ public class Contact {
 	
 	
 	@Column(name = "CRT_TS")
-	private Date crtTc;
+	private String crtTc;
 	
 	
 	@Column(name = "CRT_BY")
@@ -70,16 +65,21 @@ public class Contact {
 	
 	
 	@Column(name = "UPD_TS")
-	private Date upsTs;
+	private String upsTs;
 	
 	@Column(name = "UPD_BY")
 	private String updBy;
 	
 	@Column(name = "DEL_TS")
-	private Date detTs;
+	private String detTs;
 	
 	@Column(name = "DEL_BY")
 	private String delBy;
+	
+	@ManyToOne
+	@JoinColumn(name="USR_ID",referencedColumnName = "id")
+	private User userId;
+	
 	
 
 }

@@ -8,7 +8,7 @@ public interface ContactService {
 
 	ContactModel createUser(ContactModel contactModel);
 	ContactModel updateUser(ContactModel contactModel,Integer cId);
-	List<ContactModel> getAllList(ContactModel contactModel);
+	List<ContactModel> getAllList();
 	ContactModel getListById(Integer cId);
 	public void deleteById(Integer cId);
 }

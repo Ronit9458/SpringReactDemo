@@ -28,8 +28,10 @@ public class UserServiceImpl implements UserService {
 	public UserModel createUser(UserModel userModel) {
 		User userEntity=this.modelToEntity(userModel);
 		     User saveUser = userDao.save(userEntity);
+		    
+		     UserModel model=this.modelMaper.map(saveUser, UserModel.class);
 		     
-		     UserModel model=this.entityToModel(saveUser);
+		     
 		     
 		return model;
 	}
@@ -54,7 +56,7 @@ public class UserServiceImpl implements UserService {
 //this method is used to get all the list
 	@Override
 	public List<UserModel> getAllList() {
-		List<User> allList = this.userDao.findAll();
+	   List<User> allList = this.userDao.findAll();
 		List<UserModel> model = allList.stream().map(users-> this.entityToModel(users)).collect(Collectors.toList());
 		return model;
 	}

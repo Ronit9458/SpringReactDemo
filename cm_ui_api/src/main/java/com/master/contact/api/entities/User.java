@@ -28,12 +28,18 @@ import lombok.ToString;
 @Entity
 @Table(name = "USR")
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @ToString
-public class User {
+public class User implements java.io.Serializable{
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_USR_GEN")
 	@SequenceGenerator(name = "SEQ_USR_GEN", sequenceName = "SEQ_USR", allocationSize = 1)
@@ -75,13 +81,6 @@ public class User {
 	
 	@Column(name = "NAME")
 	private String name;
-	
-	
-	
-   public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
 
 

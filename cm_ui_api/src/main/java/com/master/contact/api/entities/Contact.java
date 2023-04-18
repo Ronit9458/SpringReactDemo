@@ -25,10 +25,11 @@ import lombok.ToString;
 @Entity
 @Table(name = "CONTACT")
 @AllArgsConstructor
+@NoArgsConstructor
 @Setter
 @Getter
 @ToString
-public class Contact {
+public class Contact implements java.io.Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_CONTACT_GEN")
@@ -76,18 +77,6 @@ public class Contact {
 	
 	@Column(name = "DEL_BY")
 	private String delBy;
-	
-	
-	
-//	@ManyToOne
-
-	 public Contact() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-
-
 	 
 	 @ManyToOne
 	 @JoinColumn(name="USR_ID", nullable=false)

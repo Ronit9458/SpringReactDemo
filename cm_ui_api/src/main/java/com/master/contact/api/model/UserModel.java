@@ -14,6 +14,7 @@ public class UserModel {
 	
 	private int id;
 	private String refId;
+	private String name;
 	private String pswd;
 	private String email;
 	private String userRole;

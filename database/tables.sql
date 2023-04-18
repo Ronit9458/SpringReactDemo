@@ -11,7 +11,8 @@ ADDRESS                     VARCHAR2(50),
 CRT_BY              		VARCHAR2(50) DEFAULT USER ,
 CRT_TS              		TIMESTAMP (6) DEFAULT SYSTIMESTAMP ,
 UPD_BY						VARCHAR2(50),
-UPD_TS						TIMESTAMP (6)
+UPD_TS						TIMESTAMP (6),
+NAME                        VARCHAR2(50)
 )TABLESPACE T_TXN_DATA;
 
 

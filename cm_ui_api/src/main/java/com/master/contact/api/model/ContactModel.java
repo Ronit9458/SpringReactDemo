@@ -3,11 +3,13 @@ package com.master.contact.api.model;
 import java.util.Date;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
 @Setter
 @Getter
+@NoArgsConstructor
 public class ContactModel {
 	
 	private int id;

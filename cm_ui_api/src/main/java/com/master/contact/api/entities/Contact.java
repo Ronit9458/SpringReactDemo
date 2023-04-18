@@ -64,7 +64,7 @@ public class Contact {
 	
 	
 	@Column(name = "UPD_TS")
-	private Date upsTc;
+	private Date upsTs;
 	
 	@Column(name = "UPD_BY")
 	private String updBy;
